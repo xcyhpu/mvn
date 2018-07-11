@@ -1,0 +1,197 @@
+#!/bin/sh
+. /etc/profile
+
+Time=$(date +%F-%T)
+
+if [[ "$1" = *center ]] || [ "$1" = "imgserver" -o "$1" = "sso" -o "$1" = "recordtutorial" ] || [[ "$1" = *system ]] || [[ "$1" = gmp ]] || [[ "$1" = eresource ]] || [[ "$1" = "cloudsclass" ]] || [[ "$1" == "teacherapi" ]]; then
+    project_name=$1
+    project_path=${project_name}-web/target
+elif [[ "$1" = *api ]] ; then
+    project_name=$1
+    project_path=target
+elif [[ "$1" == "judge-trace" ]] ; then 
+    project_name=$1
+    project_path=target
+elif [[ "$1" == "hap" ]] ; then
+    project_name=$1
+    project_path=${project_name}-web/target
+elif [[ "$1"  == "taskcentergateway" ]]; then
+    project_name=taskcentergateway
+    project_path=gateway-web/target
+
+elif [[ "$1" ==  "reportsystem" ]]; then
+    project_name=$1
+    project_path=reportsystem-web/target
+elif [[ "$1" ==  "generator-surprise-api" ]]; then
+    project_name=generator-surprise-api
+    project_path=generator-surprise-web/target
+else
+    echo "Parameter can be (
+	corecenter,basecenter,usercenter,studycenter,user2center,taskcenter,personalcenter,exercisecenter,coursecenter,generatorcenter
+	studentapi,teacherapi,benchapi,imgserver,sso,recordtutorial,libraryapi,notifyapi,parentapi
+	paymentsystem,gmp,eresource,recordTutorial,marketapi,statcenter,marketcenter,exercisesystem,exerciseapi
+        judge-trace)"
+    exit 1
+fi
+
+base_dir=/work/deploy
+deploy_path=${base_dir}/${project_name}
+app_name=${project_name}.htjy.com
+app_path=/work/www/${app_name}/webapps/ROOT
+if [[ "$1" == "taskcentergateway" ]]; then
+    base_dir=/work/deploy
+    deploy_path=${base_dir}/${project_name}
+    app_name=taskcentergateway.htjy.com
+    app_path=/work/www/${app_name}/webapps/ROOT
+fi
+
+if [ "$1" = "recordtutorial" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/HuiTongMedia/RecordTutorial.git
+deploy_path=${base_dir}/RecordTutorial
+elif [ "$1" = "studentapi" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/student.git
+deploy_path=${base_dir}/student
+elif [ "$1" = "user2center" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/usersystem.git
+deploy_path=${base_dir}/usersystem
+elif [ "$1" = "coursecenter" ] ; then
+git_addr=http://deployer:deployer@172.16.10.43/java/${project_name}.git
+elif [ "$1" = "taskcenter" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/tasksystem/tasksystem.git
+deploy_path=${base_dir}/tasksystem
+elif [ "$1" = "marketcenter" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/marketcenter.git
+deploy_path=${base_dir}/marketcenter
+elif [ "$1" = "statcenter" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/statcenter.git
+deploy_path=${base_dir}/statcenter
+elif [ "$1" = "marketapi" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/marketapi.git
+deploy_path=${base_dir}/marketapi
+elif [ "$1" = "cloudsclass" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/cloudsclass.git
+deploy_path=${base_dir}/cloudsclass
+elif [ "$1" = "judge-trace" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/tasksystem/judge-trace.git
+deploy_path=${base_dir}/judge-trace
+project_name=trace-web/target/trace-web/
+project_path=/work/deploy/judge-trace/
+elif [ "$1" = "productcenter" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/productcenter.git
+deploy_path=${base_dir}/productcenter
+elif [ "$1" = "ordersystem" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/ordersystem1.git
+elif [ "$1" = "examsystem" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/tasksystem/examsystem.git
+elif [ "$1" = "taskcentergateway" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/tasksystem/taskcentergateway.git
+elif [ "$1" = "hap" ] ; then
+git_addr=http://deployer:huitongjy@172.16.10.16/java/hap.git
+else
+git_addr=http://deployer:huitongjy@172.16.10.16/java/${project_name}.git
+fi
+
+if [ -d ${deploy_path} ];then
+  echo "begin to delete old project source:${deploy_path}..."
+  rm -fr ${deploy_path}
+  echo "finish to delete old project source..."
+fi
+echo "begin clone project source ${git_dir}"
+cd $base_dir && git clone ${git_addr}
+[ "$1" = "ordersystem" ] && mv ordersystem1 ordersystem
+#拉取分支代码
+branch="$2"
+if [ ! -z ${branch} ]
+then
+   cd ${deploy_path} && git checkout -b ${branch} origin/${branch}
+   if [ ! $? = 0 ]
+   then
+      echo -e  "\033[31;1m拉取分支 ${branch} 出错,请检查下输入的分支名是否正确!!!\033[0m"
+      exit 1
+   fi
+fi
+if [[ "$1" == "reportsystem" ]]; then
+   cd ${deploy_path} && `which mvn` clean package -Ptest
+   rm -rf $app_path/*
+   cp -R ${project_path}/reportsystem-web/* $app_path
+
+else
+   cd ${deploy_path} && `which mvn` clean package -Ptest
+   if [[ "$1" == "taskcentergateway" ]]; then
+       rm -fr $app_path/*
+       cp -R ${project_path}/gateway/* $app_path
+   elif [[ "$1" == "generator-surprise-api" ]]; then
+       rm -rf $app_path/*
+       cp -R generator-surprise-web/target/generator-surprise-web/* $app_path
+
+   elif [[ "$1" == "reportsystem" ]]; then
+       rm -rf $app_path/*
+       cp -R  ${project_name}
+   else
+       rm -fr $app_path/*
+       cp -R ${project_path}/${project_name}/* $app_path
+   fi
+fi
+#修改dubbo、数据源、域名配置
+Ip=172.16.10.26
+Ip_last=26
+
+sed -i "s/dubbo.registry.group=dubbo/&$Ip_last/" $app_path/WEB-INF/classes/dubbo.properties
+
+#if [ "$1" == "corecenter" -o "$1" == "basecenter" -o "$1" == "usercenter" -o "$1" == "studycenter" -o "$1" == "recordtutorial" -o "$1" == "user2center" -o "$1" == "taskcenter" -o "$1" == "personalcenter" ];then
+#sed -i "s/172.16.10.40/$Ip/g" $app_path/WEB-INF/classes/dataSource.properties
+#sed -i "s/172.16.10.43/$Ip/g" $app_path/WEB-INF/classes/dataSource.properties
+#fi
+
+cd $app_path/WEB-INF/classes
+
+for File in *.properties
+do
+Domain=huitong.com
+case $Ip in
+        172.16.10.41)
+                Domain=testa.huitong.com
+                    echo $Domain;;
+        172.16.10.42)
+                Domain=testb.huitong.com
+                    echo $Domain;;
+        172.16.10.45)
+                Domain=testc.huitong.com;;
+                    #echo $Domain;;
+        172.16.10.26)
+                Domain=testg.huitong.com
+                    echo $Domain;;
+esac
+sed -i "s/huitong.com/$Domain/g" $File
+sed -i "s/172.16.10.40/$Ip/g" $File
+sed -i "s/mq_env=test/mq_env=test26_/g" $File
+done
+sed -i 's/dubbo40/dubbo26/g' dubbo.properties
+sed -i 's/test/testg/g' dubbo.properties
+sed -i "s/img.testg.huitong.com/img.huitong.com/g" default.properties
+sed -i "s@jdbc:mysql://.*:3306@jdbc:mysql://172.16.10.26:3306@g" $app_path/WEB-INF/classes/dataSource.properties
+if [[ "$1" == "taskcentergateway" ]]; then
+    sed -i 's/task_group_info = task_group_info/task_group_info = task_group_info_26/g' default.properties
+    sed -i 's/task_common_info = task_common_info/task_common_info = task_common_info_26/g' default.properties
+    sed -i 's/task_shard_info = task_shard_info/task_shard_info = task_shard_info_26/g' default.properties
+    sed -i 's/task_student_info = task_student_info/task_student_info = task_student_info_26/g' default.properties
+fi
+
+
+touch /work/www/${1}.htjy.com/deploy.log
+
+# 记录部署变更
+if [[ -z "${2}" ]]
+then	
+	echo "${Time}       ${1}    master " >> /work/www/${1}.htjy.com/deploy.log
+	sed -i "s@${1}.*@${1}            master              ${Time} @g"   /work/www/java_project.info
+
+else
+	echo "${Time}       ${1}    ${2}  " >> /work/www/${1}.htjy.com/deploy.log
+	sed -i "s@${1}.*@${1}        ${2}         ${Time} @g" /work/www/java_project.info
+
+fi
+
+
+
+/work/p/tomcat/restart_tomcat.sh ${app_name}

@@ -1,0 +1,58 @@
+sed -i "s/dubbo.registry.group=dubbo/&$Ip_last/" $app_path/WEB-INF/classes/dubbo.properties
+
+#if [ "$1" == "corecenter" -o "$1" == "basecenter" -o "$1" == "usercenter" -o "$1" == "studycenter" -o "$1" == "recordtutorial" -o "$1" == "user2center" -o "$1" == "taskcenter" -o "$1" == "personalcenter" ];then
+#sed -i "s/172.16.10.40/$Ip/g" $app_path/WEB-INF/classes/dataSource.properties
+#sed -i "s/172.16.10.43/$Ip/g" $app_path/WEB-INF/classes/dataSource.properties
+#fi
+
+cd $app_path/WEB-INF/classes
+
+for File in *.properties
+do
+Domain=huitong.com
+case $Ip in
+        172.16.10.41)
+                Domain=testa.huitong.com
+                    echo $Domain;;
+        172.16.10.42)
+                Domain=testb.huitong.com
+                    echo $Domain;;
+        172.16.10.45)
+                Domain=testc.huitong.com;;
+                    #echo $Domain;;
+        172.16.10.26)
+                Domain=testg.huitong.com
+                    echo $Domain;;
+esac
+sed -i "s/huitong.com/$Domain/g" $File
+sed -i "s/172.16.10.40/$Ip/g" $File
+sed -i "s/mq_env=test/mq_env=test41_/g" $File
+done
+sed -i 's/dubbo40/dubbo41/g' dubbo.properties
+sed -i 's/test/testa/g' dubbo.properties
+sed -i "s/img.test[a-z].huitong.com/img.huitong.com/g" default.properties
+if [[ "$1" == "taskcentergateway" ]]; then
+    sed -i 's/task_group_info = task_group_info/task_group_info = task_group_info_41/g' default.properties
+    sed -i 's/task_common_info = task_common_info/task_common_info = task_common_info_41/g' default.properties
+    sed -i 's/task_shard_info = task_shard_info/task_shard_info = task_shard_info_41/g' default.properties
+    sed -i 's/task_student_info = task_student_info/task_student_info = task_student_info_41/g' default.properties
+fi
+
+
+touch /work/www/${1}.htjy.com/deploy.log
+
+# 记录部署变更
+if [[ -z "${2}" ]]
+then
+        echo "${Time}       ${1}    master " >> /work/www/${1}.htjy.com/deploy.log
+        sed -i "s@${1}.*@${1}            master              ${Time} @g"   /work/www/java_project.info
+
+else
+        echo "${Time}       ${1}    ${2}  " >> /work/www/${1}.htjy.com/deploy.log
+        sed -i "s@${1}.*@${1}        ${2}         ${Time} @g" /work/www/java_project.info
+
+fi
+
+
+
+/work/p/tomcat/restart_tomcat.sh ${app_name}

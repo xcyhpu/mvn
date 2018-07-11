@@ -15,7 +15,7 @@
       <module name="mvn" target="1.5" />
       <module name="mvn-dao" target="1.8" />
       <module name="mvn-facade-api" target="1.8" />
-      <module name="mvn-service" target="1.8.0_112-release" />
+      <module name="mvn-service" target="1.8" />
       <module name="mvnparent" target="1.5" />
     </bytecodeTargetLevel>
   </component>

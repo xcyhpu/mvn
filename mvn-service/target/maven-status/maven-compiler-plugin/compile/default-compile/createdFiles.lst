@@ -1,1 +1,2 @@
-UserInfoService.class
+com/xcy/maven/service/impl/UserInfoService.class
+UserInfoController.class
