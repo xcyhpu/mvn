@@ -2,69 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d19c0880-94af-4d3d-9d9b-9905a6489413" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mvn-service/src/main/webapp/error.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mvn-service/src/main/webapp/notFound.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-dao/mvn-dao.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-facade-api/mvn-facade-api.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/mvn-service.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/src/main/resource/servletContext.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/classes/UserInfoController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/classes/com/xcy/maven/service/impl/UserInfoService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/classes/dataSource.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/classes/UserInfoController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/classes/com/xcy/maven/service/impl/UserInfoService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/classes/dataSource.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/mvn-dao-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/mvn-facade-api-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/spring-aop-4.1.5.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/spring-beans-4.1.5.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/spring-context-4.1.5.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/spring-context-support-4.1.5.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/spring-core-4.1.5.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/spring-expression-4.1.5.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/spring-web-4.1.5.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/lib/spring-webmvc-4.1.5.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service Maven Webapp/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-service/target/mvn-service.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mvn-service/deploy_sh.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mvn-service/restart_tomcat.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mvn-service/servletContext.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mvn-service/setent_sh.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mvn-service/src/main/java/UserInfoController.java" afterPath="$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/controller/UserInfoController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mvn-service/src/main/resource/deploy.sh.txt" afterPath="$PROJECT_DIR$/mvn-service/src/main/resources/shell/deploy.sh.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mvn-service/src/main/resource/deploy_sh.txt" afterPath="$PROJECT_DIR$/mvn-service/src/main/resources/shell/deploy_sh.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mvn-service/src/main/resource/restart_tomcat.txt" afterPath="$PROJECT_DIR$/mvn-service/src/main/resources/shell/restart_tomcat.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mvn-service/src/main/resource/setent_sh.txt" afterPath="$PROJECT_DIR$/mvn-service/src/main/resources/shell/setent_sh.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-dao/target/classes/IUserInfoDao.class" afterPath="$PROJECT_DIR$/mvn-dao/target/classes/IUserInfoDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-dao/target/mvn-dao-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/mvn-dao/target/mvn-dao-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-facade-api/target/classes/com/xcy/maven/facade/api/IUserInfoService.class" afterPath="$PROJECT_DIR$/mvn-facade-api/target/classes/com/xcy/maven/facade/api/IUserInfoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-facade-api/target/mvn-facade-api.jar" afterPath="$PROJECT_DIR$/mvn-facade-api/target/mvn-facade-api.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/mvn_service_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/mvn_service_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/mvn_service_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/mvn_service_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-dao/target/classes/IUserInfoDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-dao/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-dao/target/mvn-dao-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-facade-api/target/classes/com/xcy/maven/facade/api/IUserInfoService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-facade-api/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-facade-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-facade-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-facade-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mvn-facade-api/target/mvn-facade-api.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-dao/pom.xml" afterPath="$PROJECT_DIR$/mvn-dao/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-dao/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/mvn-dao/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-facade-api/pom.xml" afterPath="$PROJECT_DIR$/mvn-facade-api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-facade-api/src/main/java/com/xcy/maven/facade/api/IUserInfoService.java" afterPath="$PROJECT_DIR$/mvn-facade-api/src/main/java/com/xcy/maven/facade/api/IUserInfoService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-facade-api/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/mvn-facade-api/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-facade-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/mvn-facade-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-facade-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/mvn-facade-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-service/pom.xml" afterPath="$PROJECT_DIR$/mvn-service/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/service/impl/UserInfoService.java" afterPath="$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/service/impl/UserInfoService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-service/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/mvn-service/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-service/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/mvn-service/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mvn-dao/.gitignore" afterPath="$PROJECT_DIR$/mvn-dao/.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/mvn-service/target/" />
@@ -80,50 +31,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserInfoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/service/impl/UserInfoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvn-service/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="303" column="25" lean-forward="true" selection-start-line="303" selection-start-column="25" selection-end-line="303" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInfoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/controller/UserInfoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mvn-facade-api/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -140,6 +48,7 @@
         <option value="$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/service/impl/UserInfoService.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/mvn-facade-api/.gitignore" />
+        <option value="$PROJECT_DIR$/mvn-dao/.gitignore" />
       </list>
     </option>
   </component>
@@ -153,8 +62,8 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1830" />
-    <option name="y" value="-257" />
+    <option name="x" value="-1878" />
+    <option name="y" value="-162" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
   </component>
@@ -624,16 +533,15 @@
       <option name="presentableId" value="Default" />
       <updated>1531297637930</updated>
       <workItem from="1531297639853" duration="591000" />
-      <workItem from="1531299121624" duration="1632000" />
+      <workItem from="1531299121624" duration="5782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2223000" />
+    <option name="totallyTimeSpent" value="6373000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1830" y="-257" width="1920" height="1057" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1878" y="-162" width="1920" height="1057" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -656,8 +564,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3119171" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.157082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33367875" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19808307" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -690,7 +598,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -726,36 +634,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/controller/UserInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvn-facade-api/src/main/java/com/xcy/maven/facade/api/IUserInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/service/impl/UserInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvn-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="303" column="25" lean-forward="true" selection-start-line="303" selection-start-column="25" selection-end-line="303" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -771,7 +653,41 @@
     <entry file="file://$PROJECT_DIR$/mvn-facade-api/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/controller/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvn-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="303" column="25" lean-forward="true" selection-start-line="303" selection-start-column="25" selection-end-line="303" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvn-service/src/main/java/com/xcy/maven/service/impl/UserInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvn-dao/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
