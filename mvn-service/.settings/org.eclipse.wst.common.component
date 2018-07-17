@@ -5,6 +5,12 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/profiles/dev"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="mvn-dao-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mvn-dao/mvn-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mvn-facade-api-1.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mvn-facade-api/mvn-facade-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="mvn-service"/>
         <property name="java-output-path" value="/mvn-service/target/classes"/>
     </wb-module>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd"
+	>
+
+	<!-- 配置数据源 -->
+	<bean name="masterDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<property name="url" value="${masterDataSource.url}" />
+		<property name="username" value="${masterDataSource.username}" />
+		<property name="password" value="${masterDataSource.password}" />
+		<property name="initialSize" value="1" />
+		<property name="maxActive" value="100" />
+		<property name="minIdle" value="1" />
+		<property name="maxWait" value="60000" />
+		<property name="validationQuery" value="${masterDataSource.validationQuery}" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="1800" />
+		<property name="logAbandoned" value="true" />
+		<property name="filters" value="mergeStat" />
+	</bean>
+
+	<!-- 配置数据源 -->
+	<bean name="slaveDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		  init-method="init" destroy-method="close">
+		<property name="url" value="${slaveDataSource.url}" />
+		<property name="username" value="${slaveDataSource.username}" />
+		<property name="password" value="${slaveDataSource.password}" />
+		<property name="initialSize" value="1" />
+		<property name="maxActive" value="100" />
+		<property name="minIdle" value="1" />
+		<property name="maxWait" value="60000" />
+		<property name="validationQuery" value="${slaveDataSource.validationQuery}" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="1800" />
+		<property name="logAbandoned" value="true" />
+		<property name="filters" value="mergeStat" />
+	</bean>
+
+	<!-- 配置数据源 -->
+	<bean name="corecenterMasterDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		  init-method="init" destroy-method="close">
+		<property name="url" value="${corecenterMasterDataSource.url}" />
+		<property name="username" value="${corecenterMasterDataSource.username}" />
+		<property name="password" value="${corecenterMasterDataSource.password}" />
+		<property name="initialSize" value="1" />
+		<property name="maxActive" value="100" />
+		<property name="minIdle" value="1" />
+		<property name="maxWait" value="60000" />
+		<property name="validationQuery" value="${corecenterMasterDataSource.validationQuery}" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="1800" />
+		<property name="logAbandoned" value="true" />
+		<property name="filters" value="mergeStat" />
+	</bean>
+
+
+	<bean id="dataSource" class="com.huitongjy.common.mvc.datasource.DynamicDataSource" >
+		<!-- 通过key-value的形式来关联数据源 -->
+		<property name="targetDataSources">
+			<map>
+				<entry value-ref="masterDataSource" key="masterDataSource"></entry>
+				<entry value-ref="slaveDataSource" key="slaveDataSource"></entry>
+				<entry value-ref="corecenterMasterDataSource" key="corecenterMasterDataSource"></entry>
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="masterDataSource" />
+	</bean>
+
+	<!-- myBatis文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis/mapper.xml"/>
+		<property name="mapperLocations" value="classpath*:mybatis/**/*Mapper.xml"/>
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="annotationClass" value="org.springframework.stereotype.Repository"/>
+		<property name="basePackage" value="com.huitongjy.generatorcenter.dao.*" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 注解方式配置事物 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>  
