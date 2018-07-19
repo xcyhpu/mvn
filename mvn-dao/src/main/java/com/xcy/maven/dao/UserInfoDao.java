@@ -22,6 +22,8 @@ public class UserInfoDao implements IUserInfoDao {
         user.setName("Jetty");
         user.setAge(27);
 
+        user.setName("Terry");
+        user.setAge(101);
 
         return user;
     }
