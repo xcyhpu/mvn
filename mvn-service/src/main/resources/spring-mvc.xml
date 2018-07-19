@@ -52,17 +52,17 @@
 	<!-- ============================================================== -->
 	<!-- 文件上传表单的视图解析器 -->
 	<!-- ============================================================== -->
-	<!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
-		<!--&lt;!&ndash; 解析request的编码 &ndash;&gt;-->
-		<!--<property name="defaultEncoding">-->
-			<!--<value>UTF-8</value>-->
-		<!--</property>-->
-		<!--&lt;!&ndash; 设置上传文件最大20MB &ndash;&gt;-->
-		<!--<property name="maxUploadSize">-->
-			<!--<value>20971520</value>-->
-		<!--</property>-->
-		<!--<property name="maxInMemorySize">-->
-			<!--<value>4096</value>-->
-		<!--</property>-->
-	<!--</bean>-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 解析request的编码 -->
+		<property name="defaultEncoding">
+			<value>UTF-8</value>
+		</property>
+		<!-- 设置上传文件最大20MB -->
+		<property name="maxUploadSize">
+			<value>20971520</value>
+		</property>
+		<property name="maxInMemorySize">
+			<value>4096</value>
+		</property>
+	</bean>
 </beans>
